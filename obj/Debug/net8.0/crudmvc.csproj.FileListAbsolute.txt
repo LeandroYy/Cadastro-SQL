@@ -108,3 +108,4 @@ C:\projetos\crudmvc\obj\Debug\net8.0\refint\crudmvc.dll
 C:\projetos\crudmvc\obj\Debug\net8.0\crudmvc.pdb
 C:\projetos\crudmvc\obj\Debug\net8.0\crudmvc.genruntimeconfig.cache
 C:\projetos\crudmvc\obj\Debug\net8.0\ref\crudmvc.dll
+C:\projetos\crudmvc\obj\Debug\net8.0\crudmvc.sourcelink.json
