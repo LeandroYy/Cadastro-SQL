@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.EntityFrameworkCore;
+
 using Projetos.CrudMvc.Data;
 using Projetos.CrudMvc.Models;
 
@@ -27,7 +29,9 @@ namespace Projetos.CrudMvc.Repositorio
         {
             ContatoModel contatoDB = ListarPorId(id);
 
+
             if (contatoDB == null)
+
             {
                 throw new System.Exception("Ocorreu um erro para deletar");
             }
@@ -40,6 +44,7 @@ namespace Projetos.CrudMvc.Repositorio
         public ContatoModel Atualizar(ContatoModel contato)
         {
             ContatoModel contatoDB = ListarPorId(contato.Id);
+
 
             if (contatoDB == null)
             {
@@ -71,5 +76,5 @@ namespace Projetos.CrudMvc.Repositorio
             var sql = "ALTER TABLE Contatos AUTO_INCREMENT = 1;";
             _bancoContex.Database.ExecuteSqlRaw(sql);
         }
-    }
+}
 }
