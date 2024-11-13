@@ -70,11 +70,5 @@ namespace Projetos.CrudMvc.Repositorio
         {
             return _bancoContex.Contatos.FirstOrDefault(x => x.Id == id);
         }
-
-        public void ResetarAutoIncremento()
-        {
-            var sql = "ALTER TABLE Contatos AUTO_INCREMENT = 1;";
-            _bancoContex.Database.ExecuteSqlRaw(sql);
-        }
-}
+    }
 }

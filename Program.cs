@@ -9,6 +9,7 @@ builder.Services.AddDbContext<BancoContext>(options =>
     new MySqlServerVersion(new Version(8, 0, 21))));
 
 builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 builder.Services.AddControllersWithViews();
 
