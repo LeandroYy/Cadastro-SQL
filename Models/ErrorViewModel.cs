@@ -1,8 +1,10 @@
-namespace crudmvc.Models;
+namespace crudmvc.Models{
 
 public class ErrorViewModel
 {
     public string? RequestId { get; set; }
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+}
+
 }

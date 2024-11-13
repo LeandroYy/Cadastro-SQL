@@ -16,7 +16,6 @@ namespace crudmvc.Controllers
             _usuarioRepositorio = usuarioRepositorio;
         }
 
-
         public IActionResult Index()
         {
             List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
@@ -36,5 +35,39 @@ namespace crudmvc.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Apagar(int id)
+        {
+            _usuarioRepositorio.Apagar(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Editar(int id)
+        {
+            UsuarioModel usuario =_usuarioRepositorio.ListarPorId(id);            
+            return View(usuario);
+        }
+
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            UsuarioModel usuario =_usuarioRepositorio.ListarPorId(id);            
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(UsuarioSemSenhaModel usuarioSemSenhaModel)
+        {
+            UsuarioModel usuario = null;
+            usuario = new UsuarioModel()
+            {
+                Id = usuarioSemSenhaModel.Id,
+                Nome = usuarioSemSenhaModel.Nome,
+                Login = usuarioSemSenhaModel.Login,
+                Email = usuarioSemSenhaModel.Email,
+                Perfil = usuarioSemSenhaModel.Perfil
+            };
+
+            usuario = _usuarioRepositorio.Atualizar(usuario);
+            return RedirectToAction("Index");
+        }
     }
 }

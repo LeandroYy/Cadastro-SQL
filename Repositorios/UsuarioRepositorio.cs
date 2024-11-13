@@ -66,6 +66,11 @@ namespace Projetos.CrudMvc.Repositorio
             return usuarioDB;
         }
 
+        public UsuarioModel BuscarPorLogin(string Login)
+        {
+            return _bancoContex.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == Login.ToUpper());
+        }
+
         public List<UsuarioModel> BuscarTodos()
         {
             return _bancoContex.Usuarios.ToList();
